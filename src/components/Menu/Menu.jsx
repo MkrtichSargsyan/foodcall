@@ -7,14 +7,9 @@ import { fetchFoods } from '../../store/actions';
 
 function Menu() {
   const dispatch = useDispatch();
-  const KEY = `${process.env.REACT_APP_SPOONACULAR_KEY}`;
   useEffect(() => {
-    dispatch(
-      fetchFoods(
-        `https://api.spoonacular.com/recipes/716429/information?apiKey=${KEY}&includeNutrition=true.`
-      )
-    );
-  }, [KEY, dispatch]);
+    dispatch(fetchFoods());
+  }, [dispatch]);
 
   return (
     <section>

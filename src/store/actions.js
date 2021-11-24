@@ -17,11 +17,21 @@ const fetchFoodsError = (e) => ({
 
 export const fetchFoods = (url) => async (dispatch) => {
   dispatch(fetchFoodsStart());
-  console.log(url);
   try {
-    const response = await axios.get(url);
-    console.log(response,'sssssss');
-    dispatch(fetchFoodsSuccess(response.data));
+    var options = {
+      method: 'GET',
+      url: 'https://edamam-recipe-search.p.rapidapi.com/search',
+      params: { q: 'all', to: '100' },
+      headers: {
+        'x-rapidapi-host': 'edamam-recipe-search.p.rapidapi.com',
+        'x-rapidapi-key': `${process.env.REACT_APP_EDAMAM_KEY}`,
+      },
+    };
+    const response = await axios
+      .request(options)
+      .then((response) => response.data.hits);
+
+    dispatch(fetchFoodsSuccess(response));
   } catch (e) {
     dispatch(fetchFoodsError(e));
   }
