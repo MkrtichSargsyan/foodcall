@@ -12,6 +12,7 @@ const foodReducer = (state = initialState, action) => {
       return { ...state, loading: true };
     case types.FETCH_FOODS_SUCCESS:
       const recipes = action.foodsList.map((el) => el.recipe);
+
       const foods = recipes.map((el) => ({
         image: el.image,
         label: el.label,
@@ -22,7 +23,12 @@ const foodReducer = (state = initialState, action) => {
         mealType: el.mealType,
         calories: el.calories,
         imgredients: el.ingredientLines,
+        stars: Math.round((Math.random() * 4 + 1) * 10) / 10,
+        price: Math.floor(Math.random() * 1000) + 20,
+        isFree: Math.random() > 0.7,
       }));
+
+      console.log(foods.length);
 
       return { ...state, loading: false, foods: foods };
     case types.FETCH_FOODS_ERROR:

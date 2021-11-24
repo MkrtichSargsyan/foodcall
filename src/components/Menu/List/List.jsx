@@ -1,11 +1,14 @@
-import React from 'react'
+import React from 'react';
+import Food from '../Food/Food';
 
-function List() {
+function List({ foods }) {
   return (
-    <div>
-      
-    </div>
-  )
+    <>
+      {foods.map((el, i) => (
+        <Food key={i} data={el} />
+      ))}
+    </>
+  );
 }
 
-export default List
+export default List;

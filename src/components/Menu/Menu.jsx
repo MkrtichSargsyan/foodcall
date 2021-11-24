@@ -20,7 +20,7 @@ function Menu() {
         <Loader />
       ) : (
         <section>
-          <p>Total - {foods.length}</p>
+          <p className='total'>Total - {foods.length}</p>
           <List foods={foods} />
         </section>
       )}
