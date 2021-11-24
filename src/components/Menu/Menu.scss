@@ -1,11 +1,14 @@
 @import '../../styles/variables.scss';
 
-section{
+section {
   padding: 20px;
   background-color: $grey_button;
   flex: 1;
+  overflow: scroll;
+  overflow-x: hidden;
+  height: 92vh;
 
-  .total{
+  .total {
     font-size: 28px;
     font-weight: bold;
     margin-bottom: 15px;

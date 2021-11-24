@@ -2,22 +2,22 @@
   {
     "id": 1,
     "title": "Filters",
-    "items": ["Open now", "Best rated", "Fast delivery"]
+    "items": ["Best rated", "Budget recipes", "Free delivery"]
   },
   {
     "id": 2,
     "title": "Cuisine",
-    "items": ["All", "Chinese", "Mexican", "American", "Italian"]
+    "items": ["All", "British", "French", "American", "Mediterranean"]
   },
   {
     "id": 3,
-    "title": "Dietary",
+    "title": "Meal Type",
     "items": [
-      "Vegetarian",
-      "Vegan",
-      "Flexitarian",
-      "Pescatarian",
-      "Macrobiotic"
+      "Lunch/Dinner",
+      "Sandwiches",
+      "Teatime",
+      "Breakfast",
+      "Cookies"
     ]
   }
 ]

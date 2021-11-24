@@ -28,7 +28,6 @@ const foodReducer = (state = initialState, action) => {
         isFree: Math.random() > 0.7,
       }));
 
-      console.log(foods.length);
 
       return { ...state, loading: false, foods: foods };
     case types.FETCH_FOODS_ERROR:
