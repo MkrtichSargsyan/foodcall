@@ -1,0 +1,13 @@
+@import '../../../styles/variables';
+
+.filterTitle {
+  margin-bottom: 5px;
+}
+
+.filterCheckbox {
+  margin: 10px 10px 10px 0;
+}
+
+.filterLabel {
+  color: $checkbox_color;
+}

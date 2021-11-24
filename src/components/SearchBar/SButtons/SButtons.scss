@@ -4,8 +4,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-right: 20px;
 
-  .basket{
+  .basket {
     background-color: $grey_button;
     border-radius: 50%;
     padding: 5px;
@@ -22,6 +23,4 @@
       background-color: $google_blue_hover;
     }
   }
-
-
 }
