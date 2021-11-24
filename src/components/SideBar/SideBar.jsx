@@ -8,7 +8,7 @@ function SideBar() {
   return (
     <aside className="sidebar">
       {filterData.map((el) => (
-        <Filters {...el} />
+        <Filters key={el.id} {...el} />
       ))}
     </aside>
   );

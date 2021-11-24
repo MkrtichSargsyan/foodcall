@@ -1,13 +1,23 @@
 @import '../../../styles/variables';
 
-.filterTitle {
-  margin-bottom: 5px;
-}
+.filterBlock {
+  margin-bottom: 15px;
+  border-bottom: 1px solid rgb(192, 191, 191);
 
-.filterCheckbox {
-  margin: 10px 10px 10px 0;
-}
+  .filterTitle {
+    margin-bottom: 5px;
+  }
 
-.filterLabel {
-  color: $checkbox_color;
+  .filterCheckbox {
+    margin: 10px 10px 10px 0;
+  }
+
+  .filterLabel {
+    color: $checkbox_color;
+  }
+  .moreFilters {
+    color: blue;
+    text-align: center;
+    margin: 10px 0;
+  }
 }

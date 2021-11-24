@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import tempReducer from './tempReducer';
+import foodReducer from './foodReducer';
 
 export default combineReducers({
-  tempReducer,
+  foodReducer,
 });
