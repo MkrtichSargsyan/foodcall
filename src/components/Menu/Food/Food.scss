@@ -31,6 +31,16 @@
     }
   }
 
+  article:last-child{
+    justify-content: space-around;
+
+    .star{
+      display: flex;
+      justify-content: end;
+      margin-right: 20px;
+    }
+  }
+
   article {
     display: flex;
     flex-direction: column;
