@@ -24,7 +24,7 @@ export const fetchFoods = () => async (dispatch) => {
       params: { q: 'all', to: '100' },
       headers: {
         'x-rapidapi-host': 'edamam-recipe-search.p.rapidapi.com',
-        'x-rapidapi-key': `${process.env.REACT_APP_EDAMAM_KEY}`,
+        'x-rapidapi-key': `7cefdc1104msha6a6fdb15f49055p1e08c6jsn9c7c4be63665`,
       },
     };
     const response = await axios
