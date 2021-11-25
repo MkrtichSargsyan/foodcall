@@ -4,6 +4,7 @@ const initialState = {
   foods: [],
   loading: false,
   error: null,
+  filters: [],
 };
 
 const foodReducer = (state = initialState, action) => {
@@ -21,17 +22,23 @@ const foodReducer = (state = initialState, action) => {
         cuisine: el.cuisineType,
         dishType: el.dishType,
         mealType: el.mealType,
-        calories: el.calories,
-        imgredients: el.ingredientLines,
         stars: Math.round((Math.random() * 4 + 1) * 10) / 10,
         price: Math.floor(Math.random() * 1000) + 20,
         isFree: Math.random() > 0.7,
       }));
 
-
       return { ...state, loading: false, foods: foods };
     case types.FETCH_FOODS_ERROR:
       return { ...state, loading: false, error: action.error };
+
+    case types.FILTER_FOOD_ITEMS:
+      let newFilter = [...state.filters];
+      action.payload.checked
+        ? newFilter.push(action.payload)
+        : (newFilter = newFilter.filter(
+            (el) => el.name !== action.payload.name
+          ));
+      return { ...state, filters: newFilter };
     default:
       return state;
   }

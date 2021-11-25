@@ -36,3 +36,8 @@ export const fetchFoods = (url) => async (dispatch) => {
     dispatch(fetchFoodsError(e));
   }
 };
+
+export const filterFoodItems = (payload) => ({
+  type: types.FILTER_FOOD_ITEMS,
+  payload,
+});
