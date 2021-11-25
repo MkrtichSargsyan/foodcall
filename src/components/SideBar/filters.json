@@ -12,6 +12,6 @@
   {
     "id": 3,
     "title": "Meal Type",
-    "items": ["Lunch/Dinner", "Sandwiches", "Teatime", "Breakfast", "Cookies"]
+    "items": ["Lunch/Dinner", "Teatime", "Breakfast", "Snack"]
   }
 ]

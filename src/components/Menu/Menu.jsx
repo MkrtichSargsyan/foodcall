@@ -15,9 +15,9 @@ function Menu() {
   const { foods, loading, filters } = useSelector((state) => state.foodReducer);
 
   let filteredFoods = foods;
+
   filters.length > 0 &&
     filters.forEach((filter) => {
-      console.log(filter.name);
       if (filter.name === 'bestrated') {
         filteredFoods = [...filteredFoods.filter((food) => food.stars >= 4)];
       } else if (filter.name === 'budgetrecipes') {
@@ -27,13 +27,11 @@ function Menu() {
       } else {
         filteredFoods = [
           ...filteredFoods.filter((food) =>
-            food[filter.title].includes(filter.name)
+            food[filter.title].includes(filter.name.toLowerCase())
           ),
         ];
       }
     });
-
-  console.log(filteredFoods.length);
 
   return (
     <>
