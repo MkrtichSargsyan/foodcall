@@ -2,9 +2,7 @@ import React from 'react';
 import './Food.scss';
 
 function Food({ data }) {
-  console.log(data);
-
-  const { mealType, dishType } = data;
+  const { mealtype, dishType } = data;
   return (
     <div className="food">
       <article>
@@ -12,7 +10,7 @@ function Food({ data }) {
         <div>
           <h4>{data.label}</h4>
           <span className="subItem">{dishType && dishType[0]}</span>
-          <span className="subItem">{mealType && mealType[0]}</span>
+          <span className="subItem">{mealtype && mealtype[0]}</span>
           <div className="time">
             <img
               src="https://img.icons8.com/material-outlined/24/000000/clock--v1.png"
@@ -39,7 +37,7 @@ function Food({ data }) {
             />
 
             <span style={{ color: data.isFree && 'green' }}>
-              {data.isFree ? 'Free' : `$${Math.floor(Math.random() * 20) + 2}`}
+              {data.isFree ? 'Free' : `$${data.delivery}`}
             </span>
           </p>
           <p>Min. $ {data.price}</p>

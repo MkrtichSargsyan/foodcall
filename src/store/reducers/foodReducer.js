@@ -21,10 +21,11 @@ const foodReducer = (state = initialState, action) => {
         totalTime: el.totalTime,
         cuisine: el.cuisineType,
         dishType: el.dishType,
-        mealType: el.mealType,
+        mealtype: el.mealType,
         stars: Math.round((Math.random() * 4 + 1) * 10) / 10,
         price: Math.floor(Math.random() * 1000) + 20,
         isFree: Math.random() > 0.7,
+        delivery: Math.floor(Math.random() * 20) + 2,
       }));
 
       return { ...state, loading: false, foods: foods };

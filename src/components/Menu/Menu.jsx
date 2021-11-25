@@ -12,7 +12,28 @@ function Menu() {
     dispatch(fetchFoods());
   }, [dispatch]);
 
-  const { foods, loading } = useSelector((state) => state.foodReducer);
+  const { foods, loading, filters } = useSelector((state) => state.foodReducer);
+
+  let filteredFoods = foods;
+  filters.length > 0 &&
+    filters.forEach((filter) => {
+      console.log(filter.name);
+      if (filter.name === 'bestrated') {
+        filteredFoods = [...filteredFoods.filter((food) => food.stars >= 4)];
+      } else if (filter.name === 'budgetrecipes') {
+        filteredFoods = [...filteredFoods.filter((food) => food.price < 200)];
+      } else if (filter.name === 'freedelivery') {
+        filteredFoods = [...filteredFoods.filter((food) => food.isFree)];
+      } else {
+        filteredFoods = [
+          ...filteredFoods.filter((food) =>
+            food[filter.title].includes(filter.name)
+          ),
+        ];
+      }
+    });
+
+  console.log(filteredFoods.length);
 
   return (
     <>
@@ -20,8 +41,8 @@ function Menu() {
         <Loader />
       ) : (
         <section>
-          <p className='total'>Total - {foods.length}</p>
-          <List foods={foods} />
+          <p className="total">Total - {filteredFoods.length}</p>
+          <List foods={filteredFoods} />
         </section>
       )}
     </>

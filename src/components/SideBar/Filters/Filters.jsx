@@ -21,8 +21,8 @@ function Filters({ title, items }) {
               onClick={(e) =>
                 dispatch(
                   filterFoodItems({
-                    title: title,
-                    name: e.target.name,
+                    title: title.toLowerCase(),
+                    name: e.target.name.toLowerCase().replace(/\s/g, ''),
                     checked: e.target.checked,
                   })
                 )

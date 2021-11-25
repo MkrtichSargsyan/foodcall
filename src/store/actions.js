@@ -15,7 +15,7 @@ const fetchFoodsError = (e) => ({
   error: e,
 });
 
-export const fetchFoods = (url) => async (dispatch) => {
+export const fetchFoods = () => async (dispatch) => {
   dispatch(fetchFoodsStart());
   try {
     var options = {
